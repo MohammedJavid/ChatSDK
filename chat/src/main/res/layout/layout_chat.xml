@@ -1,0 +1,391 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/ll_message"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/cl_message_date"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/margin_15"
+        android:visibility="gone">
+
+        <View
+            android:id="@+id/view_date_start"
+            android:layout_width="@dimen/_0_dp"
+            android:layout_height="@dimen/padding_1"
+            android:background="@color/silver"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/tv_chat_date"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tv_chat_date"
+            style="@style/text_grey_regular_12_chat"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/margin_05"
+            android:padding="@dimen/padding_1"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/view_date_end"
+            app:layout_constraintStart_toEndOf="@id/view_date_start"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <View
+            android:id="@+id/view_date_end"
+            android:layout_width="@dimen/_0_dp"
+            android:layout_height="@dimen/padding_1"
+            android:background="@color/silver"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/tv_chat_date"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <LinearLayout
+        android:id="@+id/cl_sender"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="end"
+        android:layout_marginVertical="@dimen/margin_07"
+        android:layout_marginStart="@dimen/margin_64"
+        android:layout_marginEnd="@dimen/margin_18"
+        android:background="@drawable/drawable_sender_bg"
+        android:orientation="vertical"
+        android:visibility="visible">
+
+        <LinearLayout
+            android:id="@+id/ll_delete_chat"
+            android:layout_width="@dimen/_0_dp"
+            android:layout_height="@dimen/_0_dp"
+            android:layout_gravity="end"
+            android:orientation="vertical" />
+
+        <TextView
+            android:id="@+id/tv_chat_sender_text"
+            style="@style/text_primary_dark_regular_16_chat"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="start"
+            android:layout_marginStart="@dimen/margin_10"
+            android:layout_marginTop="@dimen/margin_07"
+            android:layout_marginEnd="@dimen/margin_10"
+            android:padding="@dimen/padding_1"
+            android:text="@string/dash" />
+
+        <FrameLayout
+            android:id="@+id/fl_sender_image"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="gone">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/cl_progress_bar_sender"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:visibility="visible">
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/ic_pinkerton_white_loader"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <com.google.android.material.progressindicator.CircularProgressIndicator
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:indeterminate="true"
+                    app:indicatorColor="@color/colorPrimaryDark"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:trackThickness="@dimen/margin_03" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <com.google.android.material.imageview.ShapeableImageView
+                android:id="@+id/iv_sender_image"
+                android:layout_width="200dp"
+                android:layout_height="200dp"
+                android:contentDescription="@string/content_desc"
+                android:padding="@dimen/padding_4"
+                android:scaleType="centerCrop"
+                android:visibility="visible"
+                app:shapeAppearanceOverlay="@style/ImageView.Corner" />
+
+            <TextView
+                android:id="@+id/tv_sender_image_time"
+                style="@style/text_grey_regular_12_chat"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="bottom|end"
+                android:layout_marginStart="@dimen/margin_10"
+                android:layout_marginTop="@dimen/margin_05"
+                android:layout_marginEnd="@dimen/margin_10"
+                android:layout_marginBottom="@dimen/margin_10"
+                android:padding="@dimen/padding_1"
+                android:text="@string/dash"
+                android:textColor="@color/white" />
+
+        </FrameLayout>
+
+        <LinearLayout
+            android:id="@+id/ll_sender_media"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:visibility="gone">
+
+            <TextView
+                android:id="@+id/tv_sender_media_name"
+                style="@style/text_primary_dark_bold_16_chat"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/margin_07"
+                android:layout_marginTop="@dimen/margin_11"
+                android:layout_marginBottom="@dimen/margin_05"
+                android:padding="@dimen/padding_1"
+                android:text="@string/dash" />
+
+            <TextView
+                android:id="@+id/tv_sender_media_size"
+                style="@style/text_grey_regular_12_chat"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/margin_07"
+                android:layout_marginBottom="@dimen/margin_11"
+                android:padding="@dimen/padding_1"
+                android:text="@string/dash" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/separation_line" />
+
+            <TextView
+                android:id="@+id/tv_sender_download"
+                style="@style/text_dark_blue_bold_14"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginHorizontal="@dimen/margin_48"
+                android:layout_marginTop="@dimen/margin_12"
+                android:padding="@dimen/padding_1"
+                android:text="@string/download" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="end"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/tv_chat_sender_time"
+                style="@style/text_grey_regular_12_chat"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="top"
+                android:layout_marginStart="@dimen/margin_10"
+                android:layout_marginTop="@dimen/margin_05"
+                android:layout_marginEnd="@dimen/margin_10"
+                android:layout_marginBottom="@dimen/margin_10"
+                android:padding="@dimen/padding_1"
+                android:text="@string/dash" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/cl_receiver"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="start"
+        android:layout_marginVertical="@dimen/margin_07"
+        android:layout_marginStart="@dimen/margin_18"
+        android:layout_marginEnd="@dimen/margin_64"
+        android:background="@drawable/drawable_receiver_bg"
+        android:orientation="vertical"
+        android:visibility="visible">
+
+        <TextView
+            android:id="@+id/tv_chat_receiver_author"
+            style="@style/text_grey_regular_12_chat"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="start"
+            android:layout_marginStart="@dimen/margin_10"
+            android:layout_marginTop="@dimen/margin_07"
+            android:layout_marginEnd="@dimen/margin_10"
+            android:ellipsize="end"
+            android:maxLength="25"
+            android:maxLines="1"
+            android:padding="@dimen/padding_1"
+            android:text="@string/dash" />
+
+        <TextView
+            android:id="@+id/tv_chat_receiver_text"
+            style="@style/text_primary_dark_regular_16"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="start"
+            android:layout_marginStart="@dimen/margin_10"
+            android:layout_marginTop="@dimen/margin_07"
+            android:layout_marginEnd="@dimen/margin_07"
+            android:padding="@dimen/padding_1"
+            android:text="@string/dash" />
+
+        <FrameLayout
+            android:id="@+id/fl_receiver_image"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="gone">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/cl_progress_bar_receiver"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:visibility="visible">
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/ic_pinkerton_white_loader"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <com.google.android.material.progressindicator.CircularProgressIndicator
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:indeterminate="true"
+                    app:indicatorColor="@color/colorPrimaryDark"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:trackThickness="@dimen/margin_03" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <com.google.android.material.imageview.ShapeableImageView
+                android:id="@+id/iv_receiver_image"
+                android:layout_width="200dp"
+                android:layout_height="200dp"
+                android:contentDescription="@string/content_desc"
+                android:paddingStart="@dimen/padding_4"
+                android:paddingTop="@dimen/margin_32"
+                android:paddingEnd="@dimen/padding_4"
+                android:paddingBottom="@dimen/padding_4"
+                android:scaleType="centerCrop"
+                android:visibility="visible"
+                app:shapeAppearanceOverlay="@style/ImageView.Corner_receiver" />
+
+            <TextView
+                android:id="@+id/tv_receiver_image_author"
+                style="@style/text_grey_regular_12_chat"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="start"
+                android:layout_marginStart="@dimen/margin_10"
+                android:layout_marginTop="@dimen/margin_07"
+                android:layout_marginEnd="@dimen/margin_10"
+                android:ellipsize="end"
+                android:maxLength="25"
+                android:maxLines="1"
+                android:padding="@dimen/padding_1"
+                android:text="@string/dash" />
+
+            <TextView
+                android:id="@+id/tv_receiver_image_time"
+                style="@style/text_grey_regular_12_chat"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="bottom|end"
+                android:layout_marginStart="@dimen/margin_10"
+                android:layout_marginTop="@dimen/margin_05"
+                android:layout_marginEnd="@dimen/margin_10"
+                android:layout_marginBottom="@dimen/margin_10"
+                android:padding="@dimen/padding_1"
+                android:text="@string/dash"
+                android:textColor="@color/white" />
+
+        </FrameLayout>
+
+        <LinearLayout
+            android:id="@+id/ll_receiver_media"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:visibility="gone">
+
+            <TextView
+                android:id="@+id/tv_receiver_media_name"
+                style="@style/text_primary_dark_bold_16"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/margin_07"
+                android:layout_marginTop="@dimen/margin_11"
+                android:layout_marginBottom="@dimen/margin_05"
+                android:padding="@dimen/padding_1"
+                android:text="@string/dash" />
+
+            <TextView
+                android:id="@+id/tv_receiver_media_size"
+                style="@style/text_grey_regular_12_chat"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/margin_07"
+                android:layout_marginBottom="@dimen/margin_11"
+                android:padding="@dimen/padding_1"
+                android:text="@string/dash" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/separation_line" />
+
+            <TextView
+                android:id="@+id/tv_receiver_download"
+                style="@style/text_dark_blue_bold_14_chat"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginHorizontal="@dimen/margin_48"
+                android:layout_marginTop="@dimen/margin_12"
+                android:padding="@dimen/padding_1"
+                android:text="@string/download" />
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/tv_chat_receiver_time"
+            style="@style/text_grey_regular_12_chat"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="end"
+            android:layout_marginStart="@dimen/margin_10"
+            android:layout_marginTop="@dimen/margin_05"
+            android:layout_marginEnd="@dimen/margin_10"
+            android:layout_marginBottom="@dimen/margin_10"
+            android:padding="@dimen/padding_1"
+            android:text="@string/dash" />
+
+    </LinearLayout>
+
+
+</LinearLayout>

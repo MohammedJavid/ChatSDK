@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/modal_bottom_sheet_bg">
+
+    <View
+        android:id="@+id/view_slash"
+        android:layout_width="80dp"
+        android:layout_height="3dp"
+        android:layout_marginTop="10dp"
+        android:background="@color/bottomSheetLine"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/cl_capture"
+        android:layout_width="@dimen/_0_dp"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/margin_16"
+        android:layout_marginTop="@dimen/margin_12"
+        app:layout_constraintBottom_toTopOf="@id/view_divider5"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/view_slash">
+
+        <ImageView
+            android:id="@+id/iv_capture"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginVertical="@dimen/margin_14"
+            android:layout_marginStart="@dimen/margin_21"
+            android:contentDescription="@string/content_desc"
+            android:src="@drawable/ic_capture"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tv_capture"
+            style="@style/text_regular_white_14"
+            android:layout_width="@dimen/_0_dp"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/margin_16"
+            android:layout_marginTop="@dimen/margin_10"
+            android:layout_marginBottom="@dimen/margin_01"
+            android:padding="@dimen/padding_1"
+            android:text="@string/capture_photo"
+            app:layout_constraintBottom_toTopOf="@id/tv_take_capture"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/iv_capture"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tv_take_capture"
+            style="@style/text_regular_grey_14"
+            android:layout_width="@dimen/_0_dp"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/margin_10"
+            android:padding="@dimen/padding_1"
+            android:text="@string/take_photo"
+            android:textColor="#78909C"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@id/tv_capture"
+            app:layout_constraintStart_toStartOf="@id/tv_capture"
+            app:layout_constraintTop_toBottomOf="@id/tv_capture" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <View
+        android:id="@+id/view_divider5"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:background="@color/colorPrimaryDark"
+        app:layout_constraintBottom_toTopOf="@id/cl_capture_video"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/cl_capture" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/cl_capture_video"
+        android:layout_width="@dimen/_0_dp"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/margin_16"
+        android:layout_marginBottom="@dimen/margin_15"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/view_divider5">
+
+        <ImageView
+            android:id="@+id/iv_capture_video"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginVertical="@dimen/margin_14"
+            android:layout_marginStart="@dimen/margin_21"
+            android:contentDescription="@string/content_desc"
+            android:src="@drawable/ic_videocam"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tv_capture_video"
+            style="@style/text_regular_white_14"
+            android:layout_width="@dimen/_0_dp"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/margin_16"
+            android:layout_marginTop="@dimen/margin_10"
+            android:layout_marginBottom="@dimen/margin_01"
+            android:padding="@dimen/padding_1"
+            android:text="@string/capture_video"
+            app:layout_constraintBottom_toTopOf="@id/tv_take_capture_video"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/iv_capture_video"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tv_take_capture_video"
+            style="@style/text_regular_grey_14"
+            android:layout_width="@dimen/_0_dp"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/margin_10"
+            android:padding="@dimen/padding_1"
+            android:text="@string/take_video"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@id/tv_capture_video"
+            app:layout_constraintStart_toStartOf="@id/tv_capture_video"
+            app:layout_constraintTop_toBottomOf="@id/tv_capture_video" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
