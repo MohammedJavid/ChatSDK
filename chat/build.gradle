@@ -59,7 +59,7 @@ afterEvaluate {
 
                 groupId = 'com.github.MohammedJavid'
                 artifactId = 'chat'
-                version = '1.0.1'
+                version = '1.0.2'
             }
         }
     }
